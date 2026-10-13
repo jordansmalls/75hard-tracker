@@ -48,7 +48,7 @@ docker/   init scripts for the optional Docker services
 Clone this repository and move into it:
 
 ```bash
-git clone <this-repo-url> 75-hard
+git clone https://github.com/jordansmalls/75hard-tracker 75-hard
 cd 75-hard
 ```
 
