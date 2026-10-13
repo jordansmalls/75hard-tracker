@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>75 Hard · Check off every day, see all 75 fill in</title>
+    <meta
+      name="description"
+      content="A simple 75 Hard tracker. Check off your seven daily tasks, watch all 75 days fill in, and see how far you've come."
+    />
+    <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar rise">
+      <span class="brand">75 Hard</span>
+      <a class="topbar-link" href="http://localhost:3000/login">Sign in</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy rise">
+          <h1>Seventy-five days. Seven tasks. Every single one checked off.</h1>
+          <p class="lead">
+            A no-fuss tracker for the 75 Hard challenge. Tap through today’s list, watch your 75 days fill in, and see
+            what all that work adds up to.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="http://localhost:3000/register">Start your 75</a>
+            <a class="button ghost" href="#rules-title">Read the rules</a>
+          </div>
+        </div>
+
+        <figure class="phone rise" style="--i: 1" aria-label="The Today screen: Day 18, 4 of 7 tasks done">
+          <div class="screen">
+            <div class="screen-title">
+              <span class="day">Day 18</span>
+              <span class="date">Tuesday, October 13</span>
+            </div>
+            <div class="screen-hero">
+              <svg class="ring" viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="32" cy="32" r="27" class="ring-track" />
+                <circle cx="32" cy="32" r="27" class="ring-fill" />
+              </svg>
+              <div>
+                <span class="big">58</span>
+                <span class="small">days left</span>
+              </div>
+            </div>
+            <ul class="mini-tasks" aria-hidden="true">
+              <li class="done">Read 10 pages</li>
+              <li class="done">Progress picture</li>
+              <li class="done">Drink a gallon of water</li>
+              <li class="done">Workout 1</li>
+              <li>Workout 2</li>
+              <li>I followed my diet</li>
+            </ul>
+          </div>
+        </figure>
+      </section>
+
+      <section class="section" aria-labelledby="rules-title">
+        <h2 id="rules-title" class="reveal">The rules of 75 Hard</h2>
+        <p class="section-lead reveal">
+          75 Hard is a mental toughness program created by Andy Frisella. For 75 days in a row, you do every one of
+          these:
+        </p>
+        <ol class="rules">
+          <li class="reveal">
+            <span class="num">1</span>
+            <div>
+              <h3>Follow a diet</h3>
+              <p>Any diet you choose, as long as it’s structured. No cheat meals.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">2</span>
+            <div>
+              <h3>No alcohol</h3>
+              <p>Not a single drink for all 75 days.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">3</span>
+            <div>
+              <h3>Two 45-minute workouts</h3>
+              <p>Every day, and one of them has to be outdoors, whatever the weather.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">4</span>
+            <div>
+              <h3>Drink a gallon of water</h3>
+              <p>That’s 128 ounces, or about 3.8 liters.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">5</span>
+            <div>
+              <h3>Read 10 pages</h3>
+              <p>Nonfiction, from an actual book. Audiobooks don’t count.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">6</span>
+            <div>
+              <h3>Take a progress picture</h3>
+              <p>One every day, so you can see the change for yourself.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="callout reveal">
+          <h3>Miss anything, start over</h3>
+          <p>Skip a task on any day and you go back to Day 1. No substitutions, no exceptions.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="features-title">
+        <h2 id="features-title" class="reveal">What the app does</h2>
+        <ul class="features">
+          <li class="reveal">
+            <h3>Today’s checklist</h3>
+            <p>All seven tasks on one screen. One tap checks a task off, and a ring shows how much of today is done.</p>
+          </li>
+          <li class="reveal">
+            <h3>All 75 days at a glance</h3>
+            <p>
+              Seventy-five empty circles that fill in with a check as you finish each day. Tap any day to look back at
+              it.
+            </p>
+          </li>
+          <li class="reveal">
+            <h3>Honest about missed days</h3>
+            <p>
+              If a day wasn’t finished, you’ll know. Fill in what you forgot to log, or start over from Day 1 in one
+              tap.
+            </p>
+          </li>
+          <li class="reveal">
+            <h3>Insights that add up</h3>
+            <p>
+              Pages read, gallons drunk, workouts and hours trained, your streak, your usual reading time, and which
+              task you always save for last.
+            </p>
+          </li>
+          <li class="reveal">
+            <h3>Water and reading, logged as you go</h3>
+            <p>
+              Tap in ounces through the day and the gallon checks itself off. Log the book and pages, and keep a list
+              of everything you read.
+            </p>
+          </li>
+          <li class="reveal">
+            <h3>Progress photos, side by side</h3>
+            <p>Snap the day’s photo from the checklist, then drag a slider to compare Day 1 with today.</p>
+          </li>
+          <li class="reveal">
+            <h3>Already partway in?</h3>
+            <p>Pick the day you really started and pick up right where you are.</p>
+          </li>
+          <li class="reveal">
+            <h3>Made for your phone</h3>
+            <p>Designed to feel at home on iPhone, in light or dark mode. Add it to your home screen and go.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="closing reveal">
+        <h2>Day 1 starts when you do.</h2>
+        <a class="button primary" href="http://localhost:3000/register">Create a free account</a>
+        <p class="fine">
+          75 Hard is demanding. Check with a doctor before starting, especially around the diet and the water.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      // Fade sections in as they scroll into view. Without JS (or with reduced motion) everything just shows.
+      if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("can-reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("shown");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px" },
+        );
+        document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-destructive-soft: var(--destructive-soft);
+  --color-track: var(--track);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ * iOS-style grouped surfaces: a tinted page with white (or near-black) cards on top.
+ * Dodger blue is the one accent. Text contrast comes from weight, not gray ramps.
+ */
+:root {
+  --background: #f2f2f7;
+  --foreground: #0b0b0f;
+  --card: #ffffff;
+  --card-foreground: #0b0b0f;
+  --popover: #ffffff;
+  --popover-foreground: #0b0b0f;
+  --primary: #1e90ff;
+  --primary-foreground: #ffffff;
+  --primary-soft: color-mix(in oklab, #1e90ff 12%, transparent);
+  --secondary: #e9e9ef;
+  --secondary-foreground: #0b0b0f;
+  --muted: #e9e9ef;
+  --muted-foreground: #5e5e66;
+  --accent: color-mix(in oklab, #1e90ff 12%, transparent);
+  --accent-foreground: #0b0b0f;
+  --destructive: #e5383b;
+  --destructive-soft: color-mix(in oklab, #e5383b 12%, transparent);
+  --border: transparent;
+  --input: #e9e9ef;
+  --ring: #1e90ff;
+  --track: #e3e3ea;
+  --chart-1: #1e90ff;
+  --chart-2: #1e90ff;
+  --chart-3: #1e90ff;
+  --chart-4: #1e90ff;
+  --chart-5: #1e90ff;
+  --radius: 0.875rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b0b0f;
+  --sidebar-primary: #1e90ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e9e9ef;
+  --sidebar-accent-foreground: #0b0b0f;
+  --sidebar-border: transparent;
+  --sidebar-ring: #1e90ff;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-sheet: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #f5f5f7;
+  --card: #1c1c1e;
+  --card-foreground: #f5f5f7;
+  --popover: #1c1c1e;
+  --popover-foreground: #f5f5f7;
+  --primary: #1e90ff;
+  --primary-foreground: #ffffff;
+  --primary-soft: color-mix(in oklab, #1e90ff 22%, transparent);
+  --secondary: #2c2c2e;
+  --secondary-foreground: #f5f5f7;
+  --muted: #2c2c2e;
+  --muted-foreground: #a1a1a8;
+  --accent: color-mix(in oklab, #1e90ff 22%, transparent);
+  --accent-foreground: #f5f5f7;
+  --destructive: #ff5a5f;
+  --destructive-soft: color-mix(in oklab, #ff5a5f 18%, transparent);
+  --border: transparent;
+  --input: #2c2c2e;
+  --ring: #1e90ff;
+  --track: #2c2c2e;
+  --sidebar: #1c1c1e;
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-primary: #1e90ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2c2c2e;
+  --sidebar-accent-foreground: #f5f5f7;
+  --sidebar-border: transparent;
+  --sidebar-ring: #1e90ff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+  body {
+    font-optical-sizing: auto;
+    overscroll-behavior-y: none;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+/* Content rises into place when a screen opens. Children stagger by `--i`. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.82);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--path-length, 24);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes grow-up {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 5px color-mix(in oklab, var(--primary) 0%, transparent);
+  }
+}
+
+@utility animate-rise {
+  animation: rise-in 520ms var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+@utility animate-pop {
+  animation: pop 360ms var(--ease-spring);
+}
+
+@utility animate-draw {
+  stroke-dasharray: var(--path-length, 24);
+  animation: draw 320ms var(--ease-out-soft) 60ms both;
+}
+
+@utility animate-grow-up {
+  transform-origin: bottom;
+  animation: grow-up 640ms var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 14ms);
+}
+
+@utility animate-soft-pulse {
+  animation: soft-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
